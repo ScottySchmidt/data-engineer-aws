@@ -1,6 +1,5 @@
 # AWS Data Engineering Pipeline (Four-Part) 
 **Note:** The code for this project cannot be shared publicly due to confidentiality agreements.  
-This repository provides an overview of the architecture, project documentation, a user manual, and a video demonstration.
 
 ---
 A four-stage pipeline on AWS — **ingest → store → analyze → deploy-as-code**.  
