@@ -1,7 +1,4 @@
-# Independent Study: AWS Data Engineering Pipeline
-
-## Project Summary
-
+# AWS Data Engineering Pipeline Project
 This independent study focuses on designing and deploying a scalable, event-driven data pipeline using Amazon Web Services (AWS). The project follows a four-part architecture that includes ingesting data from public APIs, storing and processing that data in the cloud, and deploying the entire infrastructure using the AWS Cloud Development Kit (CDK) in Python. The pipeline is designed to reflect real-world best practices in cloud-based data engineering, with an emphasis on automation, scalability, and maintainability.
 
 The project will result in a fully functional pipeline that automates API data ingestion, triggers processing events, and delivers analytics outputs — all orchestrated through AWS-native services and deployed as code.
