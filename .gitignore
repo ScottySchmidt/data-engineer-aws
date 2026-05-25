@@ -34,6 +34,16 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 
+# OpenTofu / Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+*.zip
+
 # AWS / credentials (DO NOT commit keys!)
 *.pem
 *.key

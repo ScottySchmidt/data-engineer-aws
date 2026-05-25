@@ -1,27 +1,26 @@
 # AWS Data Engineer Pipeline
 
-This pipeline automates the full data engineering workflow from ingestion to reporting. It pulls data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes and joins the datasets, and generates summary reports from the results.
+This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports.
 
-The pipeline uses AWS Lambda, Amazon S3, Amazon SQS, Amazon EventBridge, and IAM to create a scalable AWS workflow. EventBridge runs the ingest process on a schedule, S3 stores the data, and SQS triggers downstream processing when new files arrive.
+The workflow uses AWS Lambda, S3, SQS, EventBridge, and IAM to support scheduled ingestion, event-driven processing, and downstream reporting.
 
-This project also includes multiple deployment methods, including OpenTofu, Python CDK, and GitHub Actions CI/CD, showing how the same pipeline can be managed with infrastructure-as-code and automation.
+It also includes multiple deployment approaches using OpenTofu, Python CDK, and GitHub Actions CI/CD to show how the same pipeline can be managed with infrastructure-as-code and automation.
 
 ## Pipeline Stages
 
 **Ingest → Store → Analyze → Deploy-as-Code**
 
 1. **Ingest**  
-   A Lambda function pulls data directly from the BLS and DataUSA APIs.
+   AWS Lambda pulls data from the BLS and DataUSA APIs.
 
 2. **Store**  
-   Amazon S3 stores raw and processed outputs.
+   Amazon S3 stores raw and processed data.
 
 3. **Analyze**  
-   A second Lambda function joins the datasets, applies hashing for integrity and deduplication, and generates summary reports.
+   A processing function joins datasets, validates data, applies hashing for deduplication, and generates reports.
 
 4. **Deploy-as-Code**  
-   Infrastructure can be deployed and managed using OpenTofu, Python CDK, and GitHub Actions CI/CD.
-
+   Infrastructure is managed using OpenTofu, Python CDK, and GitHub Actions CI/CD.
 ---
 
 ## 1. API Data from BLS → AWS S3
@@ -40,15 +39,15 @@ Automates pulling API data from BLS and dropping JSON into S3 on a monthly sched
 
 This acts as the bridge between API ingestion and downstream data analysis.
 
-- **[View Script](https://github.com/ScottySchmidt/AWS_DataEngineer_API/blob/main/02-api-lambda-s3.py)**
+- **[View Script](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/02-api-lambda-s3.py)**
 
 ## 3. Data Processing and Analysis
 
 Loads data from S3 into a Pandas notebook where it is cleaned, merged, and transformed before producing summary reports.
 
-- **[Enhanced Sync Version - In Process](https://github.com/ScottySchmidt/AWS_DataEngineer_API/blob/main/03-analytics-sync-reports.ipynb)**
+- **[Enhanced Sync Version](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/03-analytics-report.ipynb)**
 
-## 4. Infrastructure as Code and CI/CD Deployment
+## 4. Infrastructure as Code IAC
 
 Automates the AWS pipeline infrastructure using multiple deployment methods. This section shows how the pipeline can be deployed and managed with OpenTofu, Python CDK, and GitHub Actions CI/CD.
 
@@ -67,9 +66,11 @@ Defines and deploys AWS infrastructure using OpenTofu.
 Deploys the AWS pipeline using Python CDK.
 
 - **[View CDK Notebook](https://github.com/ScottySchmidt/AWS_DataEngineer_API/blob/main/04-cdk-iac-python-local.ipynb)**
-- **[View Deployment Logs - Sanitized](https://github.com/ScottySchmidt/AWS_DataEngineer_API/tree/main/docs/part4)**
 
-### Method C: GitHub Actions CI/CD
+
+## Part 5: CI/CD with GitHub Actions
+
+Uses GitHub Actions to automate build, test, and deployment steps.
 
 Uses GitHub Actions to automate build, test, and deployment steps.
 
@@ -94,7 +95,6 @@ The screenshot below shows the deployed AWS pipeline stack.
 - **OpenTofu** — manages infrastructure as code
 - **AWS CDK** — deploys AWS infrastructure using Python
 - **GitHub Actions** — supports CI/CD automation
-- **AWS Glue Data Catalog** — organizes S3 datasets with schemas
 - **Amazon Athena** — runs SQL queries directly on S3 through the Glue catalog
 
 ## Security, SDKs & Data Sources
