@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Daily EventBridge rule for DataQuest combined ingest Lambda
+
+Resources:
+  # Setup AWS Events rule that runs daily and targets the combined ingest Lambda
+  DailyIngestRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: dataquest-daily-ingest-cfn
+      Description: Daily EventBridge rule for DataQuest combined ingest Lambda
+      ScheduleExpression: rate(1 day)
+      State: ENABLED
+      Targets:
+        - Arn: !Sub arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:rearc-dataquest-combined-ingest
+          Id: CombinedIngestLambda
+
+  # Allow EventBridge to invoke the combined ingest Lambda
+  AllowEventBridgeToInvokeCombinedIngest:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: rearc-dataquest-combined-ingest
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt DailyIngestRule.Arn
+
+Outputs:
+  # Shows the EventBridge rule name in the CloudFormation Outputs tab
+  EventBridgeRuleName:
+    Description: Name of the scheduled EventBridge rule
+    Value: !Ref DailyIngestRule
