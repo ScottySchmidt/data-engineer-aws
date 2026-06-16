@@ -1,5 +1,5 @@
 # AWS Data Engineer Pipeline
-The original challenge was based on a real-world data engineering technical assessment from a consulting firm known for working with modern data platforms, including Databricks. It was designed to evaluate practical skills in data sourcing, cloud storage, analytics, automation, and infrastructure-as-code.
+The original challenge was based on a real-world data engineering technical assessment from a Databricks consulting firm. It was designed to evaluate practical skills in data sourcing, cloud storage, analytics, automation, and infrastructure-as-code.
 
 This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports.
 
