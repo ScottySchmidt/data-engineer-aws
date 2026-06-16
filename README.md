@@ -31,7 +31,7 @@ Uses the BLS API to fetch productivity and inflation data, then stores the resul
 - Uses file hash checks to skip unchanged data
 - Stores JSON results in Amazon S3
 - Enhanced sync version keeps S3 updated by adding, updating, and deleting files automatically
-- **[View Notebook – Enhanced Sync Version](https://github.com/ScottySchmidt/AWS_DataEngineer_API/blob/main/01-ingest-api-sync.ipynb)**
+- **[View Notebook – Enhanced Sync Version](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/01A-ingest-api-sync-improved.ipynb)**
 
 ## 2. API Request via AWS Lambda → S3
 
