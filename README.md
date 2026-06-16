@@ -1,11 +1,6 @@
 # AWS Data Engineer Pipeline
-The original challenge was based on a real-world data engineering technical assessment from a Databricks consulting firm. It was designed to evaluate practical skills in data sourcing, cloud storage, analytics, automation, and infrastructure-as-code.
-
-This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports.
-
-The workflow uses AWS Lambda, S3, SQS, EventBridge, and IAM to support scheduled ingestion, event-driven processing, and downstream reporting.
-
-It also includes multiple deployment approaches using OpenTofu, AWS Cloud Formation and GitHub Actions CI/CD to show how the same pipeline can be managed with infrastructure as code and automation.
+The real-world data engineering technical assessment comes from a Databricks consulting firm. It was designed to evaluate practical skills in data sourcing, cloud storage, analytics, automation, and infrastructure-as-code.  This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports.
+The workflow uses AWS Lambda, S3, SQS, EventBridge, and IAM to support scheduled ingestion, event-driven processing, and downstream reporting.  It also includes multiple deployment approaches using OpenTofu, AWS Cloud Formation and GitHub Actions CI/CD to show how the same pipeline can be managed with infrastructure as code and automation.
 
 ## Pipeline Stages
 **Ingest → Store → Analyze → Deploy-as-Code**
