@@ -32,7 +32,7 @@ data "aws_lambda_function" "combined_ingest" {
 # Package the reporting Lambda code from the main lambda folder
 data "archive_file" "reporting_lambda_zip" {
   type        = "zip"
-  source_file = "${path.module}/../lambda/reporting.py"
+  source_file = "${path.module}/../docs/lambda/reporting.py"
   output_path = "${path.module}/reporting_lambda.zip"
 }
 
