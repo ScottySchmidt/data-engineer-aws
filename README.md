@@ -1,5 +1,5 @@
 # AWS Data Engineer Pipeline
-This real-world data engineering assessment comes from a Databricks consulting firm. It was designed to serve as a representative sample of the type of real work done in data sourcing, cloud storage, analytics, automation, and infrastructure as code. This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports. The workflow uses AWS Lambda, S3, SQS, EventBridge, and IAM to support scheduled ingestion, event-driven processing, and downstream reporting.  It also includes multiple deployment approaches using OpenTofu, AWS Cloud Formation and GitHub Actions CI/CD to show how the same pipeline can be managed with infrastructure as code and automation.
+This real-world data engineering assessment comes from a Databricks consulting firm. It was designed to serve as a representative sample of the type of real work done in data sourcing, cloud storage, analytics, automation, and infrastructure as code. This project builds an automated AWS data engineering pipeline that ingests public data from the BLS and DataUSA APIs, stores raw files in Amazon S3, processes the datasets, and generates summary reports. The workflow uses AWS Lambda, S3, SQS, EventBridge, and IAM to support scheduled ingestion, event-driven processing, and downstream reporting.  It also includes multiple deployment approaches using OpenTofu and AWS Cloud Formation. 
 
 ## Pipeline Stages
 **Ingest → Store → Analyze → Deploy-as-Code**
@@ -52,7 +52,7 @@ Defines and deploys the AWS infrastructure using OpenTofu.
 Defines the scheduled and event-driven AWS resources using an AWS CloudFormation template.
 - **[View CloudFormation Template](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/04-cloudformation.yml)**
 
-### CI/CD with GitHub Actions
+### CI/CD with GitHub Actions (Planned Extention)
 GitHub Actions is included as an in-progress extension for automating validation and deployment steps.
 - **Pipeline goal:** Git push → GitHub Actions → Build/Test → AWS
 - **[View CI/CD Workflows - In Progress](https://github.com/ScottySchmidt/AWS_DataEngineer_API)**
