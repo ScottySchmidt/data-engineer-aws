@@ -14,7 +14,7 @@ This real-world data engineering assessment comes from a Databricks consulting f
    A processing function joins datasets, validates data, applies hashing for deduplication, and generates reports.
 
 4. **Deploy-as-Code**  
-   Infrastructure is managed using OpenTofu, Python CDK, and GitHub Actions CI/CD.
+   Infrastructure is managed using OpenTofu or AWS Cloud Formations.
 ---
 
 ## 1. API Data from BLS → AWS S3
