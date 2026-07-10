@@ -25,7 +25,7 @@ Uses the BLS API to fetch productivity and inflation data, then stores the resul
 - Uses file hash checks to skip unchanged data
 - Stores JSON results in Amazon S3
 - Enhanced sync version keeps S3 updated by adding, updating, and deleting files automatically
-- **[View Notebook – Enhanced Sync Version](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/01A-ingest-api-sync-improved.ipynb)**
+- **[View Notebook – Enhanced Sync Version](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/01A-ingest-api-sync-new.ipynb)**
 
 ## 2. API Request via AWS Lambda → S3
 Automates pulling API data from BLS and dropping JSON into S3 on a monthly schedule using AWS Lambda and Amazon EventBridge.
@@ -52,11 +52,10 @@ Defines and deploys the AWS infrastructure using OpenTofu.
 Defines the scheduled and event-driven AWS resources using an AWS CloudFormation template.
 - **[View CloudFormation Template](https://github.com/ScottySchmidt/data-engineer-aws/blob/main/04-cloudformation.yml)**
 
-### CI/CD with GitHub Actions (Planned Extention)
+### CI/CD with GitHub Actions (In Progress)
 GitHub Actions is included as an in-progress extension for automating validation and deployment steps.
 - **Pipeline goal:** Git push → GitHub Actions → Build/Test → AWS
 - **[View CI/CD Workflows - In Progress](https://github.com/ScottySchmidt/AWS_DataEngineer_API)**
-
 
 ## Deployment Proof
 The screenshot below shows the deployed AWS pipeline stack.
@@ -66,14 +65,13 @@ The screenshot below shows the deployed AWS pipeline stack.
 ---
 
 ## AWS Tech Stack
-
 - **Amazon S3** — stores raw and processed datasets
 - **AWS Lambda** — pulls API data and runs processing logic
 - **Amazon SQS** — queues S3 events for downstream report processing
 - **Amazon EventBridge** — triggers scheduled Lambda runs
 - **AWS IAM** — manages scoped permissions for Lambda, S3, and SQS
 - **OpenTofu** — manages infrastructure as code
-- **AWS CDK** — deploys AWS infrastructure using Python
+- **AWS ** — deploys AWS infrastructure using Python
 - **GitHub Actions** — supports CI/CD automation
 - **Amazon Athena** — runs SQL queries directly on S3 through the Glue catalog
 
