@@ -46,7 +46,7 @@ The workflow connects S3, SQS, and Lambda so new files uploaded to S3 can trigge
 
 ### Method A: OpenTofu
 Defines and deploys the AWS infrastructure using OpenTofu.
-- **[View OpenTofu Files]([https://github.com/ScottySchmidt/data-engineer-aws/tree/main/04a-opentofu])**
+- **[View OpenTofu Files](https://github.com/ScottySchmidt/data-engineer-aws/tree/main/04a-opentofu)**
 
 ### Method B: AWS CloudFormation
 Defines the scheduled and event-driven AWS resources using an AWS CloudFormation template.
