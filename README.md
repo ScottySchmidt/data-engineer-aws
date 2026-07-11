@@ -3,29 +3,19 @@ This real-world data engineering assessment/interview comes from a Databricks co
 
 ## Pipeline Stages
 **Ingest → Store → Analyze → Deploy-as-Code**
-flowchart LR
-    A[APIs + Schedule] --> B[Lambda Ingestion]
-    B --> C[S3 Raw Data]
-    C --> D[Lambda Reporting]
-    D --> E[S3 Reports]
-
+<img width="687" height="53" alt="Screenshot 2026-07-11 at 9 18 33 AM" src="https://github.com/user-attachments/assets/1a17c680-80cc-4a26-8c2b-2e5fe41ecfa7" />
 1. **Ingest**  
    AWS Lambda pulls data from the BLS and DataUSA APIs.
-
 2. **Store**  
    Amazon S3 stores raw and processed data.
-
 3. **Analyze**  
    A processing function joins datasets, validates data, applies hashing for deduplication, and generates reports.
-
 4. **Deploy-as-Code**  
    Infrastructure is managed using OpenTofu or AWS Cloud Formations.
 ---
 
 ## 1. API Data from BLS → AWS S3
-
 Uses the BLS API to fetch productivity and inflation data, then stores the results in Amazon S3.
-
 - Uses a compliant User-Agent
 - Uses file hash checks to skip unchanged data
 - Stores JSON results in Amazon S3
