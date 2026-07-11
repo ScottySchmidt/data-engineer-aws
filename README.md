@@ -3,6 +3,11 @@ This real-world data engineering assessment/interview comes from a Databricks co
 
 ## Pipeline Stages
 **Ingest → Store → Analyze → Deploy-as-Code**
+flowchart LR
+    A[APIs + Schedule] --> B[Lambda Ingestion]
+    B --> C[S3 Raw Data]
+    C --> D[Lambda Reporting]
+    D --> E[S3 Reports]
 
 1. **Ingest**  
    AWS Lambda pulls data from the BLS and DataUSA APIs.
